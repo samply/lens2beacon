@@ -1,9 +1,11 @@
-/**
- * fetches the catalogue and options file from the given urls
- * @param catalogueUrl the url of the catalogue
- * @param optionsUrl the path of the options file
- * @returns a promise that resolves to an object containing the catalogue and options file as JSON strings
- */
+// This file includes a function to the the catalogue
+
+// Use this function to get the catalogue from this project
+export async function getStaticCatalogue<T>(path: string): Promise<T> {
+	const response = await fetch(path);
+	const data = await response.json();
+	return data;
+}
 export const fetchData = async (
 	catalogueUrl: string,
 	optionsUrl: string

@@ -23,12 +23,6 @@
         "dktk-test": "DKTK-Test",
         "hamburg": "Hamburg"
     },
-    "catalogueKeyToResponseKeyMap": [
-        [
-            "Studies",
-            "Studies"
-        ]
-    ],
     "chartOptions": {
         "patients": {
             "legendMapping": {
@@ -204,19 +198,28 @@
         "title": "Results",
         "dataTypes": [
             {
-                "title": "Provider",
+                "title": "Collections",
                 "dataKey": "collections"
             },
             {
-                "title": "Studies",
-                "dataKey": "Studies"
-            },
-            {
-                "title": "Subjects",
-                "dataKey": "Subjects"
+                "title": "Patienten",
+                "dataKey": "patients"
             }
         ]
     },
-    "backends": {
-    }
+    "spots": [
+            {
+                "name": "DKTK",
+                "backendMeasures": "DKTK_STRAT_DEF_IN_INITIAL_POPULATION",
+                "url": "",
+                "sites": [
+                ],
+                "catalogueKeyToResponseKeyMap": [
+                    [
+                        "Studies",
+                        "Studies"
+                    ]
+                ]
+            }
+        ]
 }

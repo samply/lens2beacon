@@ -1,21 +1,29 @@
 <script lang="ts">
-	import {
-		barChartBackgroundColors,
-		genderHeaders,
-		measures
-	} from './config/environment';
-	import type { LensDataPasser } from '@samply/lens';
+	import './app.css';
+	import { browser } from '$app/environment';
+
+	// conditional import for SSR
+	if (browser) import('@samply/lens');
+
+	import { measures } from './config/environment';
+	import options from './config/options.json';
+	import type { LensDataPasser, QueryEvent } from '@samply/lens';
 	import { catalogueText, fetchData } from './services/catalogue.service';
+	import ResultTable from './components/ResultTable.svelte';
+	import { requestBackend } from './services/backend.service';
 
 	let catalogueopen = false;
-	const catalogueUrl = 'catalogues/catalogue-example.json';
-	const optionsFilePath = 'config/options.json';
+	let catalogueCollapsable = true;
 
+	const catalogueUrl = 'catalogues/catalogue-eucaim.json';
+	const optionsFilePath = 'config/options.json';
 
 	const jsonPromises: Promise<{
 		catalogueJSON: string;
 		optionsJSON: string;
 	}> = fetchData(catalogueUrl, optionsFilePath);
+
+	//let catalogueDataPromise = getStaticCatalogue('catalogues/catalogue-eucaim.json');
 
 	let dataPasser: LensDataPasser;
 
@@ -49,122 +57,135 @@
 	// 	dataPasser.removeValueFromQueryAPI({ queryItem, value });
 	// 	getQuery();
 	// };
+	let mobileNavOpen = false;
+	const toggleMobileNav = () => {
+		mobileNavOpen = !mobileNavOpen;
+	};
+
+	window.addEventListener('resize', () => {
+		if (window.innerWidth <= 768) {
+			mobileNavOpen = false;
+			catalogueCollapsable = true;
+		} else if (window.innerWidth > 768 && window.innerWidth < 1024) {
+			mobileNavOpen = true;
+			catalogueCollapsable = true;
+		} else if (window.innerWidth >= 1024) {
+			catalogueCollapsable = false;
+		}
+	});
+
+	if (window.innerWidth >= 1024) {
+		catalogueCollapsable = false;
+	}
+
+	/**
+	 * This event listener is triggered when the user clicks the search button
+	 */
+
+	window.addEventListener('emit-lens-query', (e) => {
+		const event = e as QueryEvent;
+		const { ast, updateResponse, abortController } = event.detail;
+		requestBackend(ast, updateResponse, abortController);
+	});
 </script>
 
 <header>
 	<div>
-		<!-- Add logo here -->
+		<a href="https://dashboard.eucaim.cancerimage.eu/">
+			<img src="../assets/images/logoEUCAIM_nav@1.5x-8.png" alt="" />
+		</a>
 	</div>
-	<h1>Lens2 Example (Title Here)</h1>
-	<div>
-		<!-- Add logo here -->
-	</div>
+	<button class="burger-menu-button" on:click="{toggleMobileNav}">
+		<div></div>
+		<div></div>
+		<div></div>
+	</button>
+	{#if mobileNavOpen}
+		<div>
+			<nav>
+				<ul>
+					<li>
+						<a href="https://dashboard.eucaim.cancerimage.eu/">HOME</a>
+					</li>
+					<li>
+						<a href="https://catalogue.eucaim.cancerimage.eu/">PUBLIC CATALOGUE</a>
+					</li>
+					<li>
+						<a href="https://help.cancerimage.eu/#login">HELPDESK</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	{/if}
 </header>
 
 <main>
 	<div class="search">
 		<div class="search-wrapper">
-			<lens-search-bar-multiple noMatchesFoundMessage="{'keine Ergebnisse gefunden'}"
+			<lens-search-bar-multiple noMatchesFoundMessage="{'No collections found'}"
 			></lens-search-bar-multiple>
 			<lens-info-button
-				noQueryMessage="Leere Suchanfrage: Sucht nach allen Ergebnissen."
+				noQueryMessage="Query with no criteria selected: Searches for all collections."
 				showQuery="{true}"
 			></lens-info-button>
-			<lens-search-button title="Suchen"></lens-search-button>
+			<lens-search-button title="Search"></lens-search-button>
 		</div>
 	</div>
 	<div class="grid">
 		<div class="catalogue-wrapper">
 			<div class="catalogue">
-				<h2>Suchkriterien</h2>
-				<lens-info-button
-					message="{[
-						`Bei Patienten mit mehreren onkologischen Diagnosen, können sich ausgewählte Suchkriterien nicht nur auf eine Erkrankung beziehen, sondern auch auf Weitere.`,
-						`Innerhalb einer Kategorie werden verschiedene Ausprägungen mit einer „Oder-Verknüpfung“ gesucht; bei der Suche über mehrere Kategorien mit einer „Und-Verknüpfung“.`
-					]}"
-				></lens-info-button>
 				<lens-catalogue
 					toggleIconUrl="right-arrow-svgrepo-com.svg"
 					addIconUrl="long-right-arrow-svgrepo-com.svg"
 					infoIconUrl="info-circle-svgrepo-com.svg"
 					texts="{catalogueText}"
-					toggle="{{ collapsable: false, open: catalogueopen }}"
+					toggle="{{ collapsable: catalogueCollapsable, open: catalogueopen }}"
 				></lens-catalogue>
 			</div>
 		</div>
 		<div class="charts">
 			<div class="chart-wrapper result-summary">
 				<lens-result-summary></lens-result-summary>
-				<lens-search-modified-display
-					>Diagramme repräsentieren nicht mehr die aktuelle Suche!</lens-search-modified-display
-				>
 			</div>
-			<div class="chart-wrapper chart-diagnosis">
+
+			<div class="chart-wrapper">
 				<lens-chart
-					title="Diagnose"
-					catalogueGroupCode="diagnosis"
-					chartType="bar"
-					indexAxis="y"
-					groupingDivider="."
-					groupingLabel=".%"
-					filterRegex="^[CD].*"
-					xAxisTitle="Anzahl der Diagnosen"
-					yAxisTitle="ICD-10-Codes"
-					backgroundColor="{JSON.stringify(barChartBackgroundColors)}"
+					title="Studies per Collection"
+					catalogueGroupCode="Studies"
+					chartType="pie"
+					displayLegends="{true}"
 				></lens-chart>
 			</div>
 
 			<div class="chart-wrapper result-table">
-				<lens-result-table pageSize="10">
-					<div slot="above-pagination" class="result-table-hint-text">
-						* Umfasst Gewebe- und flüssige Proben. Die Anzahl der FFPE-Proben (Schätzung)
-						entspricht der Zahl der Diagnosen.
-					</div>
-				</lens-result-table>
-			</div>
-			<div class="chart-wrapper">
-				<lens-chart
-					title="Geschlecht"
-					catalogueGroupCode="gender"
-					chartType="pie"
-					displayLegends="{true}"
-					headers="{genderHeaders}"
-				></lens-chart>
-			</div>
-			<div class="chart-wrapper chart-age-distribution">
-				<lens-chart
-					title="Alter bei Erstdiagnose"
-					catalogueGroupCode="age_at_diagnosis"
-					chartType="bar"
-					groupRange="{10}"
-					filterRegex="^(1*[12]*[0-9])"
-					xAxisTitle="Alter"
-					yAxisTitle="Anzahl der Primärdiagnosen"
-					backgroundColor="{JSON.stringify(barChartBackgroundColors)}"
-				></lens-chart>
-			</div>
-			<div class="chart-wrapper">
-				<lens-chart
-					title="Proben"
-					catalogueGroupCode="sample_kind"
-					chartType="bar"
-					xAxisTitle="Probentypen"
-					yAxisTitle="Probenanzahl"
-					filterRegex="^(?!(tissue-other|buffy-coat|peripheral-blood-cells|dried-whole-blood|swab|ascites|stool-faeces|saliva|liquid-other|derivative-other))"
-					backgroundColor="{JSON.stringify(barChartBackgroundColors)}"
-				>
-				</lens-chart>
+				<ResultTable options="{options.tableOptions}" />
 			</div>
 		</div>
+	</div>
+
+	<div class="credits">
+		<p>
+			This federated search was made with the open source <a
+				href="https://github.com/samply/">Samply tools</a
+			>
+			(<a href="https://github.com/samply/lens/">Lens</a>,
+			<a href="https://github.com/samply/beam/">Beam</a>,
+			<a href="https://github.com/samply/focus/">Focus</a>,
+			<a href="https://github.com/samply/bridgehead/">Bridgehead</a>), created by the
+			<a href="https://www.dkfz.de/en/verbis/">German Cancer Research Center (DKFZ)</a>.
+		</p>
 	</div>
 </main>
 
 <footer>
-	<div class="made_with">
-		Made with ♥ and <a href="https://github.com/samply/lens">samply/lens-core</a>
-	</div>
 	<div class="logo">
-		<img src="../Deutsches_Krebsforschungszentrum_Logo.svg" alt="Logo des DKFZ" />
+		<a href="https://dashboard.eucaim.cancerimage.eu/">
+			<img src="../assets/images/logo_EUCAIM_footer@2x-8.png" alt="" />
+		</a>
+	</div>
+	<div class="links">
+		<a href="https://dashboard.eucaim.cancerimage.eu/privacy-policy">PRIVACY POLICY</a>
+		<a href="http://localhost:4200/#">COOKIES POLICY</a>
 	</div>
 </footer>
 

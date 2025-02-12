@@ -1,0 +1,678 @@
+[
+    {
+        "key": "patient",
+        "name": "Patient",
+        "childCategories": [
+            {
+                "key": "SNOMEDCT263495000",
+                "name": "Gender",
+                "system": "",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "SNOMEDCT248153007",
+                        "name": "male",
+                        "description": "male"
+                    },
+                    {
+                        "key": "SNOMEDCT248152002",
+                        "name": "female",
+                        "description": "female"
+                    },
+                    {
+                        "key": "SNOMEDCT74964007",
+                        "name": "other",
+                        "description": "other"
+                    },
+                    {
+                        "key": "SNOMEDCT261665006",
+                        "name": "unknown",
+                        "description": "unknown"
+                    }
+                ]
+            },
+            {
+                "key": "SNOMEDCT423493009",
+                "name": "Age at Diagnosis",
+                "system": "",
+                "fieldType": "number",
+                "type": "BETWEEN",
+                "criteria": []
+            }
+        ]
+    },
+    {
+        "key": "clinical",
+        "name": "Clinical Parameters",
+        "childCategories": [
+            {
+                "key": "SNOMEDCT439401001",
+                "name": "Diagnosis",
+                "system": "urn:snomed-org/sct",
+                "fieldType": "autocomplete",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "SNOMEDCT363406005",
+                        "name": "Colon Cancer",
+                        "description": "Colon Cancer"
+                    },
+                    {
+                        "key": "SNOMEDCT254837009",
+                        "name": "Breast Cancer",
+                        "description": "Breast Cancer"
+                    },
+                    {
+                        "key": "SNOMEDCT363358000",
+                        "name": "Lung Cancer",
+                        "description": "Lung Cancer"
+                    },
+                    {
+                        "key": "SNOMEDCT363484005",
+                        "name": "Pelvis Cancer",
+                        "description": "Pelvis Cancer"
+                    },
+                    {
+                        "key": "SNOMEDCT399068003",
+                        "name": "Prostate Cancer",
+                        "description": "Prostate Cancer"
+                    }
+                ]
+            },
+            {
+                "key": "SNOMEDCT432213005",
+                "name": "Year of Diagnosis",
+                "system": "",
+                "fieldType": "number",
+                "type": "BETWEEN",
+                "criteria": []
+            }
+        ]
+    },
+    {
+        "key": "imaging",
+        "name": "Image Parameters",
+        "childCategories": [
+            {
+                "key": "RID10311",
+                "name": "Modality",
+                "system": "urn:oid:2.16.840.1.113883.6.256",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "RID10312",
+                        "name": "Magnetic Resonance Imaging",
+                        "description": "Magnetic Resonance Imaging"
+                    },
+                    {
+                        "key": "RID10337",
+                        "name": "Positron Emission Tomography",
+                        "description": "Positron Emission Tomography"
+                    },
+                    {
+                        "key": "RID10334",
+                        "name": "Single Photon Emission Computed Tomography",
+                        "description": "Single Photon Emission Computed Tomography"
+                    },
+                    {
+                        "key": "RID10321",
+                        "name": "Computed Tomography",
+                        "description": "Computed Tomography"
+                    }
+                ]
+            },
+            {
+                "key": "SNOMEDCT123037004",
+                "name": "Body Part",
+                "system": "urn:snomed-org/sct",
+                "fieldType": "autocomplete",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "SNOMEDCT76752008",
+                        "name": "Breast",
+                        "description": "Breast"
+                    },
+                    {
+                        "key": "SNOMEDCT71854001",
+                        "name": "Colon",
+                        "description": "Colon"
+                    },
+                    {
+                        "key": "SNOMEDCT39607008",
+                        "name": "Lung",
+                        "description": "Lung"
+                    },
+                    {
+                        "key": "SNOMEDCT12921003",
+                        "name": "Pelvis",
+                        "description": "Pelvis"
+                    },
+                    {
+                        "key": "SNOMEDCT41216001",
+                        "name": "Prostate",
+                        "description": "Prostate"
+                    }
+                ]
+            },
+            {
+                "key": "C25392",
+                "name": "Manufacturer",
+                "system": "http://bioontology.org/projects/ontologies/birnlex",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "C200140",
+                        "name": "Siemens Healthineers",
+                        "description": "Siemens Healthineers"
+                    },
+                    {
+                        "key": "birnlex_3066",
+                        "name": "Siemens Medical Solutions",
+                        "description": "Siemens Medical Solutions"
+                    },
+                    {
+                        "key": "birnlex_12833",
+                        "name": "General Electric Medical Systems",
+                        "description": "General Electric Medical Systems"
+                    },
+                    {
+                        "key": "birnlex_3065",
+                        "name": "Philips Medical Systems",
+                        "description": "Philips Medical Systems"
+                    },
+                    {
+                        "key": "birnlex_3067",
+                        "name": "Toshiba Medical Solutions",
+                        "description": "Toshiba Medical Solutions"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "childCategories": [
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001310",
+                        "name": "positive"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001332",
+                        "name": "negative"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1045815",
+                "name": "Estrogen receptor Ag [Presence] in Breast cancer specimen by Immune stain",
+                "system": "",
+                "type": "EQUALS"
+            },
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001310",
+                        "name": "positive"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001332",
+                        "name": "negative"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1046085",
+                "name": "Progesterone receptor Ag [Presence] in Breast cancer specimen by Immune stain",
+                "system": "",
+                "type": "EQUALS"
+            },
+            {
+                "fieldType": "number",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1033410",
+                "min": 0,
+                "name": "Prostate specific Ag [Mass/Volume] in Serum or Plasma",
+                "system": "",
+                "type": "BETWEEN"
+            },
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1002257",
+                        "name": "0"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001877",
+                        "name": "1+"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001879",
+                        "name": "2+"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001882",
+                        "name": "3+"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1045851",
+                "name": "HER2 [Presence] in Breast cancer specimen by Immune stain",
+                "system": "",
+                "type": "EQUALS"
+            },
+            {
+                "fieldType": "number",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1045913",
+                "min": 0,
+                "name": "Cells.Ki-67 nuclear Ag/100 cells in Breast cancer specimen by Immune stain",
+                "system": "",
+                "type": "BETWEEN"
+            }
+        ],
+        "key": "tumor_marker_test",
+        "name": "Tumor Marker Test"
+    },
+    {
+        "childCategories": [
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1025818",
+                        "name": "Gleason grade score 2 out of 10"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1025912",
+                        "name": "Gleason grade score 3 out of 10"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1026007",
+                        "name": "Gleason grade score 4 out of 10"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1026103",
+                        "name": "Gleason grade score 5 out of 10"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1026200",
+                        "name": "Gleason grade score 6 out of 10"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1026298",
+                        "name": "Gleason grade score 7 out of 10"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1026397",
+                        "name": "Gleason grade score 8 out of 10"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1026497",
+                        "name": "Gleason grade score 9 out of 10"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1025725",
+                        "name": "Gleason grade score 10 out of 10"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1037294",
+                "name": "Gleason scoring system for malignant neoplasm of prostate (staging scale)",
+                "system": "",
+                "type": "EQUALS"
+            },
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001362",
+                        "name": "International Society of Pathology histologic grade group 1"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001365",
+                        "name": "International Society of Pathology histologic grade group 2"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001367",
+                        "name": "International Society of Pathology histologic grade group 3"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001368",
+                        "name": "International Society of Pathology histologic grade group 4"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001369",
+                        "name": "International Society of Pathology histologic grade group 5"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1037300",
+                "name": "International Society of Urological Pathology prostate cancer staging system (staging scale)",
+                "system": "",
+                "type": "EQUALS"
+            }
+        ],
+        "key": "histologic_grade",
+        "name": "Histologic Grade"
+    },
+    {
+        "childCategories": [
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000316",
+                        "name": "cT0"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000333",
+                        "name": "cT1"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000351",
+                        "name": "cT2"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000370",
+                        "name": "cT2a"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000390",
+                        "name": "cT2b"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000411",
+                        "name": "cT2c"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000433",
+                        "name": "cT3"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000456",
+                        "name": "cT3a"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000480",
+                        "name": "cT3b"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000505",
+                        "name": "cT4"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1033379",
+                "name": "cT category",
+                "system": "",
+                "type": "EQUALS"
+            },
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000708",
+                        "name": "pT0"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000741",
+                        "name": "pT1"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000775",
+                        "name": "pT2"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000810",
+                        "name": "pT2a"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000846",
+                        "name": "pT2b"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000883",
+                        "name": "pT2c"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000921",
+                        "name": "pT3"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000960",
+                        "name": "pT3a"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001000",
+                        "name": "pT3b"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1001041",
+                        "name": "pT4"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1033391",
+                "name": "pT category",
+                "system": "",
+                "type": "EQUALS"
+            },
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000285",
+                        "name": "cN0"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000300",
+                        "name": "cN1"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1033358",
+                "name": "cN category",
+                "system": "",
+                "type": "EQUALS"
+            },
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000645",
+                        "name": "pN0"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000676",
+                        "name": "pN1"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1033368",
+                "name": "pN category",
+                "system": "",
+                "type": "EQUALS"
+            },
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000246",
+                        "name": "cM1"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000258",
+                        "name": "cM1a"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000271",
+                        "name": "cM1b"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1033341",
+                "name": "cM category",
+                "system": "",
+                "type": "EQUALS"
+            },
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000531",
+                        "name": "pM1"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000558",
+                        "name": "pM1a"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000586",
+                        "name": "pM1b"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.COM1000615",
+                        "name": "pM1c"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.CLIN1033349",
+                "name": "pM category",
+                "system": "",
+                "type": "EQUALS"
+            }
+        ],
+        "key": "cancer_stage",
+        "name": "Cancer stage"
+    },
+    {
+        "childCategories": [
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005470",
+                        "name": "BI-RADS 0"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005469",
+                        "name": "BI-RADS 1"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005468",
+                        "name": "BI-RADS 2"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005466",
+                        "name": "BI-RADS 3"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005465",
+                        "name": "BI-RADS 4"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005464",
+                        "name": "BI-RADS 5"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005463",
+                        "name": "BI-RADS 6"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005459",
+                "name": "BI-RADS assessment",
+                "system": "",
+                "type": "EQUALS"
+            },
+            {
+                "criteria": [
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005479",
+                        "name": "PI-RADS 1"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005478",
+                        "name": "PI-RADS 2"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005477",
+                        "name": "PI-RADS 3"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005476",
+                        "name": "PI-RADS 4"
+                    },
+                    {
+                        "description": "",
+                        "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005475",
+                        "name": "PI-RADS 5"
+                    }
+                ],
+                "fieldType": "single-select",
+                "key": "EUCAIM_Hyper-Ontology_V1.0.IMG1005459",
+                "name": "PI-RADS assessment",
+                "system": "",
+                "type": "EQUALS"
+            }
+        ],
+        "key": "tumor",
+        "name": "Tumor"
+    }
+]
