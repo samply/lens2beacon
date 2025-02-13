@@ -15,7 +15,7 @@
 	let catalogueopen = false;
 	let catalogueCollapsable = true;
 
-	const catalogueUrl = 'catalogues/catalogue-eucaim.json';
+	const catalogueUrl = 'catalogues/catalogue-beacon.json';
 	const optionsFilePath = 'config/options.json';
 
 	const jsonPromises: Promise<{

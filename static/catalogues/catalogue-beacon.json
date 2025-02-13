@@ -1,0 +1,847 @@
+[
+  {
+    "key": "variants",
+    "name": "Variants",
+    "childCategories": [
+      {
+        "key": "genomic_variation",
+        "name": "Genomic variation",
+        "childCategories": [
+          {
+            "key": "chromosome",
+            "name": "Chromosome",
+            "system": "",
+            "fieldType": "single-select",
+            "type": "EQUALS",
+            "criteria": [
+              {
+                "key": "1",
+                "description": "1",
+                "name": "1"
+              },
+              {
+                "key": "2",
+                "description": "2",
+                "name": "2"
+              },
+              {
+                "key": "3",
+                "description": "3",
+                "name": "3"
+              },
+              {
+                "key": "4",
+                "description": "4",
+                "name": "4"
+              },
+              {
+                "key": "5",
+                "description": "5",
+                "name": "5"
+              },
+              {
+                "key": "6",
+                "description": "6",
+                "name": "6"
+              },
+              {
+                "key": "7",
+                "description": "7",
+                "name": "7"
+              },
+              {
+                "key": "8",
+                "description": "8",
+                "name": "8"
+              },
+              {
+                "key": "9",
+                "description": "9",
+                "name": "9"
+              },
+              {
+                "key": "10",
+                "description": "10",
+                "name": "10"
+              },
+              {
+                "key": "11",
+                "description": "11",
+                "name": "11"
+              },
+              {
+                "key": "12",
+                "description": "12",
+                "name": "12"
+              },
+              {
+                "key": "13",
+                "description": "13",
+                "name": "13"
+              },
+              {
+                "key": "14",
+                "description": "14",
+                "name": "14"
+              },
+              {
+                "key": "15",
+                "description": "15",
+                "name": "15"
+              },
+              {
+                "key": "16",
+                "description": "16",
+                "name": "16"
+              },
+              {
+                "key": "17",
+                "description": "17",
+                "name": "17"
+              },
+              {
+                "key": "18",
+                "description": "18",
+                "name": "18"
+              },
+              {
+                "key": "19",
+                "description": "19",
+                "name": "19"
+              },
+              {
+                "key": "20",
+                "description": "20",
+                "name": "20"
+              },
+              {
+                "key": "21",
+                "description": "21",
+                "name": "21"
+              },
+              {
+                "key": "22",
+                "description": "22",
+                "name": "22"
+              }
+            ]
+          },
+          {
+            "key": "base_change",
+            "name": "Base transition",
+            "system": "",
+            "fieldType": "single-select",
+            "type": "EQUALS",
+            "criteria": [
+              {
+                "key": "A>G",
+                "description": "A>G",
+                "name": "A>G"
+              },
+              {
+                "key": "G>A",
+                "description": "G>A",
+                "name": "G>A"
+              },
+              {
+                "key": "C>T",
+                "description": "C>T",
+                "name": "C>T"
+              },
+              {
+                "key": "T>C",
+                "description": "T>C",
+                "name": "T>C"
+              }
+            ]
+          },
+          {
+            "key": "range",
+            "name": "Range",
+            "system": "",
+            "fieldType": "number",
+            "type": "BETWEEN",
+            "criteria": []
+          }
+        ]
+      },
+      {
+        "key": "hgvs",
+        "name": "HGVS, e.g. 22:g.16050075A>G",
+        "system": "",
+        "fieldType": "string",
+        "type": "EQUALS",
+        "criteria": []
+      },
+      {
+        "key": "variant_type",
+        "name": "Variant Type",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "Variant",
+            "name": "Variant",
+            "description": "Variant"
+          },
+          {
+            "key": "Sequence variant",
+            "name": "Sequence variant",
+            "description": "Sequence variant"
+          },
+          {
+            "key": "Structural variant",
+            "name": "Structural variant",
+            "description": "Structural variant"
+          },
+          {
+            "key": "Allele",
+            "name": "Allele",
+            "description": "Allele"
+          },
+          {
+            "key": "Short tandem repeat variant",
+            "name": "Short tandem repeat variant",
+            "description": "Short tandem repeat variant"
+          },
+          {
+            "key": "Splice acceptor variant",
+            "name": "Splice acceptor variant",
+            "description": "Splice acceptor variant"
+          },
+          {
+            "key": "Splice donor variant",
+            "name": "Splice donor variant",
+            "description": "Splice donor variant"
+          },
+          {
+            "key": "Frameshift variant",
+            "name": "Frameshift variant",
+            "description": "Frameshift variant"
+          },
+          {
+            "key": "Missense variant",
+            "name": "Missense variant",
+            "description": "Missense variant"
+          },
+          {
+            "key": "Protein altering variant",
+            "name": "Protein altering variant",
+            "description": "Protein altering variant"
+          },
+          {
+            "key": "Splice region variant",
+            "name": "Splice region variant",
+            "description": "Splice region variant"
+          },
+          {
+            "key": "Incomplete terminal codon variant",
+            "name": "Incomplete terminal codon variant",
+            "description": "Incomplete terminal codon variant"
+          },
+          {
+            "key": "Intergenic variant",
+            "name": "Intergenic variant",
+            "description": "Intergenic variant"
+          },
+          {
+            "key": "Stop retained variant",
+            "name": "Stop retained variant",
+            "description": "Stop retained variant"
+          },
+          {
+            "key": "Synonymous variant",
+            "name": "Synonymous variant",
+            "description": "Synonymous variant"
+          },
+          {
+            "key": "Flagged variant",
+            "name": "Flagged variant",
+            "description": "Flagged variant"
+          }
+        ]
+      },
+      {
+        "key": "zygosity",
+        "name": "Zygosity",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "Hemizygous",
+            "name": "Hemizygous",
+            "description": "Hemizygous"
+          },
+          {
+            "key": "Heterozygous",
+            "name": "Heterozygous",
+            "description": "Heterozygous"
+          },
+          {
+            "key": "Homozygous",
+            "name": "Homozygous",
+            "description": "Homozygous"
+          },
+          {
+            "key": "Hemizygous X-linked",
+            "name": "Hemizygous X-linked",
+            "description": "Hemizygous X-linked"
+          },
+          {
+            "key": "Hemizygous Y-linked",
+            "name": "Hemizygous Y-linked",
+            "description": "Hemizygous Y-linked"
+          },
+          {
+            "key": "Hemizygous insertion-linked",
+            "name": "Hemizygous insertion-linked",
+            "description": "Hemizygous insertion-linked"
+          },
+          {
+            "key": "Simple heterozygous",
+            "name": "Simple heterozygous",
+            "description": "Simple heterozygous"
+          },
+          {
+            "key": "Disomic zygosity",
+            "name": "Disomic zygosity",
+            "description": "Disomic zygosity"
+          },
+          {
+            "key": "Aneusomic zygosity",
+            "name": "Aneusomic zygosity",
+            "description": "Aneusomic zygosity"
+          },
+          {
+            "key": "Trisomic homozygous",
+            "name": "Trisomic homozygous",
+            "description": "Trisomic homozygous"
+          },
+          {
+            "key": "Trisomic heterozygous",
+            "name": "Trisomic heterozygous",
+            "description": "Trisomic heterozygous"
+          },
+          {
+            "key": "Compound heterozygous",
+            "name": "Compound heterozygous",
+            "description": "Compound heterozygous"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "cohorts",
+    "name": "Cohorts",
+    "childCategories": [
+      {
+        "key": "cohorts_gender",
+        "name": "Sex",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "male",
+            "name": "male",
+            "description": "male"
+          },
+          {
+            "key": "female",
+            "name": "female",
+            "description": "female"
+          }
+        ]
+      },
+      {
+        "key": "cohorts_geographicOrigin",
+        "name": "Geographic origin",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "Northern Ireland",
+            "name": "Northern Ireland",
+            "description": "Northern Ireland"
+          },
+          {
+            "key": "Republic of Ireland",
+            "name": "Republic of Ireland",
+            "description": "Republic of Ireland"
+          },
+          {
+            "key": "Wales",
+            "name": "Wales",
+            "description": "Wales"
+          },
+          {
+            "key": "Scotland",
+            "name": "Scotland",
+            "description": "Scotland"
+          },
+          {
+            "key": "England",
+            "name": "England",
+            "description": "England"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "runs",
+    "name": "Runs",
+    "childCategories": [
+      {
+        "key": "genomic_source",
+        "name": "Genomic source",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "Genomic Source",
+            "name": "Genomic Source",
+            "description": "Genomic Source"
+          },
+          {
+            "key": "Metagenomic Source",
+            "name": "Metagenomic Source",
+            "description": "Metagenomic Source"
+          }
+        ]
+      },
+      {
+        "key": "platform_model",
+        "name": "Platform model",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "DNA sequencer",
+            "name": "DNA sequencer",
+            "description": "DNA sequencer"
+          },
+          {
+            "key": "Illumina HiSeq 2000",
+            "name": "Illumina HiSeq 2000",
+            "description": "Illumina HiSeq 2000"
+          },
+          {
+            "key": "Oxford Nanopore MinION",
+            "name": "Oxford Nanopore MinION",
+            "description": "Oxford Nanopore MinION"
+          },
+          {
+            "key": "Large-insert clone DNA microarray",
+            "name": "Large-insert clone DNA microarray",
+            "description": "Large-insert clone DNA microarray"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "datasets",
+    "name": "Datasets",
+    "childCategories": [
+      {
+        "key": "data_use",
+        "name": "Data use",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "Publication required",
+            "name": "Publication required",
+            "description": "Publication required"
+          },
+          {
+            "key": "General research use",
+            "name": "General research use",
+            "description": "General research use"
+          },
+          {
+            "key": "User specific restriction",
+            "name": "User specific restriction",
+            "description": "User specific restriction"
+          },
+          {
+            "key": "Institution specific",
+            "name": "Institution specific",
+            "description": "Institution specific"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "analyses",
+    "name": "Analyses",
+    "childCategories": []
+  },
+  {
+    "key": "individuals",
+    "name": "Individuals",
+    "childCategories": [
+      {
+        "key": "gender",
+        "name": "Sex",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "male",
+            "name": "male",
+            "description": "male"
+          },
+          {
+            "key": "female",
+            "name": "female",
+            "description": "female"
+          }
+        ]
+      },
+      {
+        "key": "ethnicity",
+        "name": "Ethnicity",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "African",
+            "name": "African",
+            "description": "African"
+          },
+          {
+            "key": "British",
+            "name": "British",
+            "description": "British"
+          },
+          {
+            "key": "Asian or Asian British",
+            "name": "Asian or Asian British",
+            "description": "Asian or Asian British"
+          },
+          {
+            "key": "White and Asian",
+            "name": "White and Asian",
+            "description": "White and Asian"
+          },
+          {
+            "key": "White and Black African",
+            "name": "White and Black African",
+            "description": "White and Black African"
+          },
+          {
+            "key": "Any other Asian background",
+            "name": "Any other Asian background",
+            "description": "Any other Asian background"
+          },
+          {
+            "key": "White and Black Caribbean",
+            "name": "White and Black Caribbean",
+            "description": "White and Black Caribbean"
+          },
+          {
+            "key": "Black or Black British",
+            "name": "Black or Black British",
+            "description": "Black or Black British"
+          },
+          {
+            "key": "Any other mixed background",
+            "name": "Any other mixed background",
+            "description": "Any other mixed background"
+          },
+          {
+            "key": "Bangladeshi",
+            "name": "Bangladeshi",
+            "description": "Bangladeshi"
+          },
+          {
+            "key": "Any other Black background",
+            "name": "Any other Black background",
+            "description": "Any other Black background"
+          },
+          {
+            "key": "Irish",
+            "name": "Irish",
+            "description": "Irish"
+          },
+          {
+            "key": "Mixed",
+            "name": "Mixed",
+            "description": "Mixed"
+          },
+          {
+            "key": "White",
+            "name": "White",
+            "description": "White"
+          },
+          {
+            "key": "Pakistani",
+            "name": "Pakistani",
+            "description": "Pakistani"
+          },
+          {
+            "key": "Caribbean",
+            "name": "Caribbean",
+            "description": "Caribbean"
+          },
+          {
+            "key": "Other ethnic group",
+            "name": "Other ethnic group",
+            "description": "Other ethnic group"
+          },
+          {
+            "key": "Indian",
+            "name": "Indian",
+            "description": "Indian"
+          },
+          {
+            "key": "Any other white background",
+            "name": "Any other white background",
+            "description": "Any other white background"
+          },
+          {
+            "key": "Chinese",
+            "name": "Chinese",
+            "description": "Chinese"
+          }
+        ]
+      },
+      {
+        "key": "disease",
+        "name": "Disease",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "acute bronchitis",
+            "name": "acute bronchitis",
+            "description": "acute bronchitis"
+          },
+          {
+            "key": "agranulocytosis",
+            "name": "agranulocytosis",
+            "description": "agranulocytosis"
+          },
+          {
+            "key": "asthma",
+            "name": "asthma",
+            "description": "asthma"
+          },
+          {
+            "key": "bipolar affective disorder",
+            "name": "bipolar affective disorder",
+            "description": "bipolar affective disorder"
+          },
+          {
+            "key": "cardiomyopathy",
+            "name": "cardiomyopathy",
+            "description": "cardiomyopathy"
+          },
+          {
+            "key": "dental caries",
+            "name": "dental caries",
+            "description": "dental caries"
+          },
+          {
+            "key": "eating disorders",
+            "name": "eating disorders",
+            "description": "eating disorders"
+          },
+          {
+            "key": "fibrosis and cirrhosis of liver",
+            "name": "fibrosis and cirrhosis of liver",
+            "description": "fibrosis and cirrhosis of liver"
+          },
+          {
+            "key": "gastro-oesophageal reflux disease",
+            "name": "gastro-oesophageal reflux disease",
+            "description": "gastro-oesophageal reflux disease"
+          },
+          {
+            "key": "haemorrhoids",
+            "name": "haemorrhoids",
+            "description": "haemorrhoids"
+          },
+          {
+            "key": "influenza due to certain identified influenza virus",
+            "name": "influenza due to certain identified influenza virus",
+            "description": "influenza due to certain identified influenza virus"
+          },
+          {
+            "key": "insulin-dependent diabetes mellitus",
+            "name": "insulin-dependent diabetes mellitus",
+            "description": "insulin-dependent diabetes mellitus"
+          },
+          {
+            "key": "iron deficiency anaemia",
+            "name": "iron deficiency anaemia",
+            "description": "iron deficiency anaemia"
+          },
+          {
+            "key": "multiple sclerosis",
+            "name": "multiple sclerosis",
+            "description": "multiple sclerosis"
+          },
+          {
+            "key": "obesity",
+            "name": "obesity",
+            "description": "obesity"
+          },
+          {
+            "key": "sarcoidosis",
+            "name": "sarcoidosis",
+            "description": "sarcoidosis"
+          },
+          {
+            "key": "schizophrenia",
+            "name": "schizophrenia",
+            "description": "schizophrenia"
+          },
+          {
+            "key": "thyroiditis",
+            "name": "thyroiditis",
+            "description": "thyroiditis"
+          },
+          {
+            "key": "varicose veins of lower extremities",
+            "name": "varicose veins of lower extremities",
+            "description": "varicose veins of lower extremities"
+          }
+        ]
+      },
+      {
+        "key": "geographicOrigin",
+        "name": "Geographic origin",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "Northern Ireland",
+            "name": "Northern Ireland",
+            "description": "Northern Ireland"
+          },
+          {
+            "key": "Republic of Ireland",
+            "name": "Republic of Ireland",
+            "description": "Republic of Ireland"
+          },
+          {
+            "key": "Wales",
+            "name": "Wales",
+            "description": "Wales"
+          },
+          {
+            "key": "Scotland",
+            "name": "Scotland",
+            "description": "Scotland"
+          },
+          {
+            "key": "England",
+            "name": "England",
+            "description": "England"
+          }
+        ]
+      },
+      {
+        "key": "procedureCode",
+        "name": "OPCS4 procedure code, e.g. X53",
+        "system": "",
+        "fieldType": "string",
+        "type": "EQUALS",
+        "criteria": []
+      },
+      {
+        "key": "bmi",
+        "name": "BMI",
+        "system": "",
+        "fieldType": "number",
+        "type": "BETWEEN",
+        "criteria": []
+      },
+      {
+        "key": "weight",
+        "name": "Weight",
+        "system": "",
+        "fieldType": "number",
+        "type": "BETWEEN",
+        "criteria": []
+      },
+      {
+        "key": "height",
+        "name": "Height",
+        "system": "",
+        "fieldType": "number",
+        "type": "BETWEEN",
+        "criteria": []
+      }
+    ]
+  },
+  {
+    "key": "biosamples",
+    "name": "Biosamples",
+    "childCategories": [
+      {
+        "key": "sample_kind",
+        "name": "Sample type",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "blood",
+            "description": "Whole blood",
+            "name": "Whole blood"
+          },
+          {
+            "key": "blood-serum",
+            "description": "Serum",
+            "name": "Serum"
+          },
+          {
+            "key": "blood-plasma",
+            "description": "Plasma",
+            "name": "Plasma"
+          },
+          {
+            "key": "lymph",
+            "description": "Lymph",
+            "name": "Lymph"
+          }
+        ]
+      },
+      {
+        "key": "biosample_status",
+        "name": "Biosample status",
+        "system": "",
+        "fieldType": "single-select",
+        "type": "EQUALS",
+        "criteria": [
+          {
+            "key": "Reference sample",
+            "description": "Reference sample",
+            "name": "Reference sample"
+          },
+          {
+            "key": "Abnormal sample",
+            "description": "Abnormal sample",
+            "name": "Abnormal sample"
+          }
+        ]
+      }
+    ]
+  }
+]
