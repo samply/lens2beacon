@@ -50,12 +50,11 @@
 <main>
 	<div class="search">
 		<div class="search-wrapper">
-<!--
+			<!--
 			<lens-search-bar-multiple noMatchesFoundMessage="{'No collections found'}"
 			></lens-search-bar-multiple>
 -->
-			<lens-search-bar noMatchesFoundMessage="{'No collections found'}"
-			></lens-search-bar>
+			<lens-search-bar noMatchesFoundMessage="{'No collections found'}"></lens-search-bar>
 			<lens-info-button
 				noQueryMessage="Query with no criteria selected: Searches for all collections."
 				showQuery="{true}"
@@ -82,32 +81,32 @@
 
 			<div class="chart-wrapper">
 				<lens-chart
-						title="Gender Distribution"
-						catalogueGroupCode="Gender"
-						chartType="pie"
-						displayLegends="{true}"
-						xAxisTitle="Gender signifier"
-						yAxisTitle="Number of patients"
+					title="Gender Distribution"
+					catalogueGroupCode="Gender"
+					chartType="pie"
+					displayLegends="{true}"
+					xAxisTitle="Gender signifier"
+					yAxisTitle="Number of patients"
 				></lens-chart>
 			</div>
 			<div class="chart-wrapper">
 				<lens-chart
-						title="Ethnicity"
-						catalogueGroupCode="Ethnicity"
-						chartType="bar"
-						displayLegends="{true}"
-						xAxisTitle="Ethnicity signifier"
-						yAxisTitle="Number of patients"
+					title="Ethnicity"
+					catalogueGroupCode="Ethnicity"
+					chartType="bar"
+					displayLegends="{true}"
+					xAxisTitle="Ethnicity signifier"
+					yAxisTitle="Number of patients"
 				></lens-chart>
 			</div>
 			<div class="chart-wrapper">
 				<lens-chart
-						title="Samples"
-						catalogueGroupCode="sample_kind"
-						chartType="bar"
-						displayLegends="{true}"
-						xAxisTitle="Sample types"
-						yAxisTitle="Sample count"
+					title="Samples"
+					catalogueGroupCode="sample_kind"
+					chartType="bar"
+					displayLegends="{true}"
+					xAxisTitle="Sample types"
+					yAxisTitle="Sample count"
 				></lens-chart>
 			</div>
 		</div>
