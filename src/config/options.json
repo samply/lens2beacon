@@ -176,36 +176,39 @@
     "tableOptions": {
         "headerData": [
             {
-                "title": "Collections",
-                "dataKey": "collections"
+                "title": "Sites",
+                "dataKey": "sites"
             },
             {
-                "title": "Provider",
-                "dataKey": "provider"
+                "title": "Variants",
+                "dataKey": "variants"
             },
             {
-                "title": "Studies",
-                "dataKey": "studies_count"
+                "title": "Cohorts",
+                "dataKey": "cohorts"
             },
             {
-                "title": "Subjects",
-                "dataKey": "subject_count"
+                "title": "Runs",
+                "dataKey": "runs"
+            },
+            {
+                "title": "Datasets",
+                "dataKey": "datasets"
+            },
+            {
+                "title": "Analyses",
+                "dataKey": "analyses"
+            },
+            {
+                "title": "Individuals",
+                "dataKey": "individuals"
+            },
+            {
+                "title": "Biosamples",
+                "dataKey": "biosamples"
             }
         ],
         "claimedText": "Processing..."
-    },
-    "resultSummaryOptions": {
-        "title": "Results",
-        "dataTypes": [
-            {
-                "title": "Collections",
-                "dataKey": "collections"
-            },
-            {
-                "title": "Patienten",
-                "dataKey": "patients"
-            }
-        ]
     },
     "spots": [
             {
