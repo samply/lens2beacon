@@ -228,28 +228,24 @@ export class Spot {
 	 *
 	 * @param {string} site - The name or identifier of the site.
 	 * @param {Status} status - The status of the response.
-	 * @param {Site} provider - The provider data containing collections of studies and subjects.
+	 * @param {Provider} provider - The provider data containing collections of studies and subjects.
 	 * @returns {ResponseStore} - A Map containing the transformed response data for the site.
 	 */
 	transformResponse(site: string, status: Status, provider: Provider): ResponseStore {
-		const transformedResponse: ResponseStore = new Map();
-
 		let totalStudiesCount = 0;
-		let totalSubjectsCount = 0;
-
 		for (const collection of provider.collections) {
 			totalStudiesCount += collection.studies_count;
 		}
 
+		let totalSubjectsCount = 0;
 		for (const collection of provider.collections) {
 			totalSubjectsCount += collection.subjects_count;
 		}
 
-		// Creating stratifier
-		// const stratifierStudies: any[] = [];
-		const stratifierStudies = [];
+		// Studies per collection
+		const studies = [];
 		for (const collection of provider.collections) {
-			stratifierStudies.push({
+			studies.push({
 				value: { text: collection.name },
 				population: [
 					{
@@ -267,6 +263,7 @@ export class Spot {
 			});
 		}
 
+		// Creating stratifier
 		const providerData: Site = {
 			status: 'succeeded',
 			data: {
@@ -290,7 +287,7 @@ export class Spot {
 						stratifier: [
 							{
 								code: [{ text: 'Studies' }],
-								stratum: stratifierStudies
+								stratum: studies
 							}
 						]
 					},
@@ -321,6 +318,7 @@ export class Spot {
 			}
 		};
 
+		const transformedResponse: ResponseStore = new Map();
 		transformedResponse.set(site, providerData);
 		return transformedResponse;
 	}
