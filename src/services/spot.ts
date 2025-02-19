@@ -94,6 +94,7 @@ export class Spot {
 			} else {
 				console.error(err);
 				console.log('Mock-Response');
+				/*
 				const response: Provider[] = [
 					{
 						provider: 'ProCancerI',
@@ -114,6 +115,19 @@ export class Spot {
 								studies_count: 5434
 							}
 						]
+					}
+				];
+*/
+				const response: Provider[] = [
+					{
+						name: 'ProCAncer-I Use Case 2',
+						subjects_count: 5432,
+						studies_count: 5434
+					},
+					{
+						name: 'Test 2',
+						subjects_count: 5432,
+						studies_count: 5434
 					}
 				];
 
@@ -232,17 +246,24 @@ export class Spot {
 	 * @returns {ResponseStore} - A Map containing the transformed response data for the site.
 	 */
 	transformResponse(site: string, status: Status, provider: Provider): ResponseStore {
+		/*
 		let totalStudiesCount = 0;
 		for (const collection of provider.collections) {
 			totalStudiesCount += collection.studies_count;
 		}
+*/
+		const totalStudiesCount = provider.studies_count;
 
+		/*
 		let totalSubjectsCount = 0;
 		for (const collection of provider.collections) {
 			totalSubjectsCount += collection.subjects_count;
 		}
+*/
+		const totalSubjectsCount = provider.subjects_count;
 
 		// Studies per collection
+		/*
 		const studies = [];
 		for (const collection of provider.collections) {
 			studies.push({
@@ -262,6 +283,24 @@ export class Spot {
 				]
 			});
 		}
+*/
+		const studies = [];
+		studies.push({
+			value: { text: provider.name },
+			population: [
+				{
+					count: provider.studies_count,
+					code: {
+						coding: [
+							{
+								system: '',
+								code: ''
+							}
+						]
+					}
+				}
+			]
+		});
 
 		// Creating stratifier
 		const providerData: Site = {
