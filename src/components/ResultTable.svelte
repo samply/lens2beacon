@@ -32,34 +32,14 @@
 			<th class="expand-header"></th>
 		</tr>
 	</thead>
-<!--
 	<tbody class="table-body">
-	{#each response as provider, index1}
-		{#each provider.collections as tableRow, index2}
-			<tr
-					class="table-row"
-					class:expanded-row="{expanded[index1.toString() + index2.toString()]}"
-			>
-				<td class="table-cell" style="width:30%">{tableRow.name}</td>
-				<td class="table-cell" style="width:30%">{provider.provider}</td>
-				<td class="table-cell" style="width:18%">{tableRow.studies_count}</td>
-				<td class="table-cell" style="width:18%">{tableRow.subjects_count}</td>
+		{#each response as provider, index1}
+			<tr class="table-row" class:expanded-row="{expanded[index1.toString()]}">
+				<td class="table-cell" style="width:30%">{provider.name}</td>
+				<td class="table-cell" style="width:18%">{provider.studies_count}</td>
+				<td class="table-cell" style="width:18%">{provider.subjects_count}</td>
 			</tr>
 		{/each}
-	{/each}
-	</tbody>
--->
-	<tbody class="table-body">
-	{#each response as provider, index1}
-		<tr
-				class="table-row"
-				class:expanded-row="{expanded[index1.toString()]}"
-		>
-			<td class="table-cell" style="width:30%">{provider.name}</td>
-			<td class="table-cell" style="width:18%">{provider.studies_count}</td>
-			<td class="table-cell" style="width:18%">{provider.subjects_count}</td>
-		</tr>
-	{/each}
 	</tbody>
 </table>
 <lens-data-passer bind:this="{dataPasser}"></lens-data-passer>

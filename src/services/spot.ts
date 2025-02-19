@@ -147,93 +147,6 @@ export class Spot {
 		}
 	}
 
-	/*
-	transformResponse(site: string, status: Status, provider: Provider): ResponseStore {
-		const transformedResponse: ResponseStore = new Map();
-
-		const providerData: Site = {
-			status: 'succeeded',
-			data: {
-				extension: [provider],
-				group: [
-					{
-						code: {
-							text: 'Studies'
-						},
-						population: [
-							{
-								count: provider.collections.reduce(
-									(acc, curr) => acc + curr.studies_count,
-									0
-								),
-								code: {
-									coding: [
-										{
-											system: '',
-											code: ''
-										}
-									]
-								}
-							}
-						],
-						stratifier: [
-							{
-								code: [{ text: 'Studies' }],
-								stratum: provider.collections.map((collection) => ({
-									value: { text: collection.name },
-									population: [
-										{
-											count: collection.studies_count,
-											code: {
-												coding: [
-													{
-														system: '',
-														code: ''
-													}
-												]
-											}
-										}
-									]
-								}))
-							}
-						]
-					},
-					{
-						code: {
-							text: 'Subjects'
-						},
-						population: [
-							{
-								count: provider.collections.reduce(
-									(acc, curr) => acc + curr.subjects_count,
-									0
-								),
-								code: {
-									coding: [
-										{
-											system: '',
-											code: ''
-										}
-									]
-								}
-							}
-						],
-						stratifier: []
-					}
-				],
-				date: '',
-				period: {},
-				measure: '',
-				resourceType: '',
-				status: '',
-				type: ''
-			}
-		};
-
-		transformedResponse.set(site, providerData);
-		return transformedResponse;
-	}
-*/
 	/**
 	 * Transforms provider data into a structured response format.
 	 *
@@ -246,44 +159,6 @@ export class Spot {
 	 * @returns {ResponseStore} - A Map containing the transformed response data for the site.
 	 */
 	transformResponse(site: string, status: Status, provider: Provider): ResponseStore {
-		/*
-		let totalStudiesCount = 0;
-		for (const collection of provider.collections) {
-			totalStudiesCount += collection.studies_count;
-		}
-*/
-		const totalStudiesCount = provider.studies_count;
-
-		/*
-		let totalSubjectsCount = 0;
-		for (const collection of provider.collections) {
-			totalSubjectsCount += collection.subjects_count;
-		}
-*/
-		const totalSubjectsCount = provider.subjects_count;
-
-		// Studies per collection
-		/*
-		const studies = [];
-		for (const collection of provider.collections) {
-			studies.push({
-				value: { text: collection.name },
-				population: [
-					{
-						count: collection.studies_count,
-						code: {
-							coding: [
-								{
-									system: '',
-									code: ''
-								}
-							]
-						}
-					}
-				]
-			});
-		}
-*/
 		const studies = [];
 		studies.push({
 			value: { text: provider.name },
@@ -312,7 +187,7 @@ export class Spot {
 						code: { text: 'Studies' },
 						population: [
 							{
-								count: totalStudiesCount,
+								count: provider.studies_count,
 								code: {
 									coding: [
 										{
@@ -334,7 +209,7 @@ export class Spot {
 						code: { text: 'Subjects' },
 						population: [
 							{
-								count: totalSubjectsCount,
+								count: provider.subjects_count,
 								code: {
 									coding: [
 										{
