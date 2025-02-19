@@ -1,27 +1,22 @@
 <script lang="ts">
 	import type { LensDataPasser } from '@samply/lens';
-	import type { Site } from '../Types/types';
+	import type { Provider } from '../Types/types';
 	export let options = {
 		headerData: [],
 		claimedText: ''
 	};
 
-	let response: Site[] = [];
+	let response: Provider[] = [];
 	let expanded: boolean[] = new Array(1).fill(false);
 	let dataPasser: LensDataPasser;
 
-	const toggleExpand = (index: string) => {
-		expanded[index] = !expanded[index];
-		const img: HTMLElement | null = document.getElementById(`expand-button-img-${index}`);
-		if (!img) return;
-		img.classList.toggle('expand-button-img-rotate');
-	};
-
 	window.addEventListener('lens-responses-updated', () => {
-		console.warn("addEventListener: lens-responses-updated, getResponseAPI may not be a known function");
+		console.warn(
+			'addEventListener: lens-responses-updated, getResponseAPI may not be a known function'
+		);
 		response = Array.from(
 			dataPasser?.getResponseAPI().values(),
-			(x) => x.data.extension[0] as Site
+			(x) => x.data.extension[0] as Provider
 		);
 	});
 </script>
@@ -60,11 +55,6 @@
 	th {
 		text-align: left;
 		padding: 0.5em 0 0.5em 10px;
-	}
-	.collection-table > tr > td {
-		text-align: left;
-		padding-top: 0.5em;
-		padding-bottom: 0.5em;
 	}
 	.expanded-row {
 		font-weight: bold;
