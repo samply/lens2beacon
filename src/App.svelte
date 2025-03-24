@@ -8,7 +8,7 @@
 	import { measures } from './config/environment';
 	import type { LensDataPasser, QueryEvent } from '@samply/lens';
 	import { catalogueText, fetchData } from './services/catalogue.service';
-	import { requestBackend } from './services/backend.service';
+	import { requestBackend } from './services/backends/backend.service';
 
 	let catalogueopen = false;
 	let catalogueCollapsable = true;
@@ -23,19 +23,21 @@
 
 	let dataPasser: LensDataPasser;
 
-	if (window.innerWidth >= 1024) {
-		catalogueCollapsable = false;
-	}
-
 	/**
 	 * This event listener is triggered when the user clicks the search button
 	 */
+	if (browser) {
+		window.addEventListener('emit-lens-query', (e) => {
+			if (!dataPasser) return;
 
-	window.addEventListener('emit-lens-query', (e) => {
-		const event = e as QueryEvent;
-		const { ast, updateResponse, abortController } = event.detail;
-		requestBackend(ast, updateResponse, abortController);
-	});
+			const event = e as CustomEvent;
+			const { ast, updateResponse, abortController } = event.detail;
+			const criteria: string[] = dataPasser.getCriteriaAPI('diagnosis');
+
+			requestBackend(ast, updateResponse, abortController, measures, criteria);
+		});
+	}
+
 </script>
 
 <header>
