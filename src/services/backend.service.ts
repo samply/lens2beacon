@@ -1,7 +1,7 @@
 import type { AstTopLayer, Site } from '@samply/lens';
 import { Spot } from './spot';
 
-// studies per collection = aggregated values of studies_count -> getAggregatedPopulationForStratumCode()
+// studies per collection = aggregated values of variants -> getAggregatedPopulationForStratumCode()
 
 export const requestBackend = (
 	ast: AstTopLayer,

@@ -1,7 +1,6 @@
-# Lens2 Demo Project
+# Lens2 Beacon UI
 
-This repository provides the most fundamental building blocks needed to build your very own interface using the Lens2 library.
-
+This fork of the Lens2 project provides Beacon search functionality
 ---
 
 ## Implementation Guide 

@@ -6,10 +6,8 @@
 	if (browser) import('@samply/lens');
 
 	import { measures } from './config/environment';
-	import options from './config/options.json';
 	import type { LensDataPasser, QueryEvent } from '@samply/lens';
 	import { catalogueText, fetchData } from './services/catalogue.service';
-	import ResultTable from './components/ResultTable.svelte';
 	import { requestBackend } from './services/backend.service';
 
 	let catalogueopen = false;
@@ -50,11 +48,7 @@
 <main>
 	<div class="search">
 		<div class="search-wrapper">
-			<!--
-			<lens-search-bar-multiple noMatchesFoundMessage="{'No collections found'}"
-			></lens-search-bar-multiple>
--->
-			<lens-search-bar noMatchesFoundMessage="{'No collections found'}"></lens-search-bar>
+			<lens-search-bar noMatchesFoundMessage="{'No information found'}"></lens-search-bar>
 			<lens-info-button
 				noQueryMessage="Query with no criteria selected: Searches for all collections."
 				showQuery="{true}"
@@ -76,7 +70,7 @@
 		</div>
 		<div class="charts">
 			<div class="chart-wrapper result-table">
-				<ResultTable options="{options.tableOptions}" />
+				<lens-result-table pageSize="10"> </lens-result-table>
 			</div>
 
 			<div class="chart-wrapper">
@@ -91,12 +85,12 @@
 			</div>
 			<div class="chart-wrapper">
 				<lens-chart
-					title="Ethnicity"
-					catalogueGroupCode="Ethnicity"
+					title="Variants"
+					catalogueGroupCode="Variants"
 					chartType="bar"
 					displayLegends="{true}"
-					xAxisTitle="Ethnicity signifier"
-					yAxisTitle="Number of patients"
+					xAxisTitle="Variant signifier"
+					yAxisTitle="Number of entities"
 				></lens-chart>
 			</div>
 			<div class="chart-wrapper">

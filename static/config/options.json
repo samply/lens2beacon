@@ -7,12 +7,14 @@
         }
     },
     "siteMappings": {
-        "hamburg": "Hamburg"
+        "stockholm": "Stockholm",
+        "athens": "Athens",
+        "bucharest": "Bucharest"
     },
     "catalogueKeyToResponseKeyMap": [
         [
-            "Studies",
-            "Studies"
+            "Variants",
+            "Variants"
         ]
     ],
     "chartOptions": {
@@ -99,7 +101,7 @@
         "headerData": [
             {
                 "title": "Sites",
-                "dataKey": "sites"
+                "dataKey": "site"
             },
             {
                 "title": "Variants",
