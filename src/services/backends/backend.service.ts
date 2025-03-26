@@ -1,5 +1,5 @@
 import type { AstTopLayer, Site } from '@samply/lens';
-import { Spot } from './spot';
+import { Beacon } from './beacon';
 
 export const requestBackend = (
 	ast: AstTopLayer,
@@ -7,25 +7,13 @@ export const requestBackend = (
 	abortController: AbortController
 ) => {
 	const queryId = crypto.randomUUID();
-	const query = {
-		lang: 'ast',
-		payload: btoa(
-			decodeURI(
-				JSON.stringify({ ast: ast, id: queryId.concat('__search__').concat(queryId) })
-			)
-		)
-	};
+	const backendUrl: string = window.location.origin + ':8080'; // Assume same origin as frontend
+	const backend = new Beacon(new URL(backendUrl), queryId);
+	const queryString = JSON.stringify(ast)
 
-	let backendUrl: string = '';
-	const siteList: string[] = ['uppsala-test', 'eric-test', 'prague-uhkt-test'];
-
-	if (import.meta.env.VITE_TARGET_ENVIRONMENT === 'production') {
-		backendUrl = 'https://locator.bbmri-eric.eu/backend/';
-	} else {
-		backendUrl = 'http://localhost:8055';
-	}
-
-	const backend = new Spot(new URL(backendUrl), siteList, queryId);
-
-	backend.send(btoa(decodeURI(JSON.stringify(query))), updateResponse, abortController);
-};
+    backend.send(
+		queryString,
+        updateResponse,
+        abortController,
+    );
+}

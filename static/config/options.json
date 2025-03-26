@@ -13,8 +13,20 @@
     },
     "catalogueKeyToResponseKeyMap": [
         [
-            "Variants",
-            "Variants"
+            "Gender",
+            "Gender"
+        ],
+        [
+            "Ethnicity",
+            "Ethnicity"
+        ],
+        [
+            "variant_name",
+            "variant_name"
+        ],
+        [
+            "sample_kind",
+            "sample_kind"
         ]
     ],
     "chartOptions": {

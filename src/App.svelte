@@ -6,7 +6,7 @@
 	if (browser) import('@samply/lens');
 
 	import { measures } from './config/environment';
-	import type { LensDataPasser, QueryEvent } from '@samply/lens';
+	import type { LensDataPasser } from '@samply/lens';
 	import { catalogueText, fetchData } from './services/catalogue.service';
 	import { requestBackend } from './services/backends/backend.service';
 
@@ -32,12 +32,9 @@
 
 			const event = e as CustomEvent;
 			const { ast, updateResponse, abortController } = event.detail;
-			const criteria: string[] = dataPasser.getCriteriaAPI('diagnosis');
-
-			requestBackend(ast, updateResponse, abortController, measures, criteria);
+			requestBackend(ast, updateResponse, abortController);
 		});
 	}
-
 </script>
 
 <header>
@@ -71,6 +68,10 @@
 			</div>
 		</div>
 		<div class="charts">
+			<!-- Each chart requires an entry in src/options.json and static/options.json -->
+			<!-- in the catalogueKeyToResponseKeyMap, providing mappings from the code for -->
+			<!-- the stratifier to the catalogueGroupCode for the chart. You need to do this -->
+			<!-- even if code and catalogueGroupCode are the same. -->
 			<div class="chart-wrapper result-table">
 				<lens-result-table pageSize="10"> </lens-result-table>
 			</div>
@@ -87,11 +88,21 @@
 			</div>
 			<div class="chart-wrapper">
 				<lens-chart
-					title="Variants"
-					catalogueGroupCode="Variants"
+					title="Ethnicity Distribution"
+					catalogueGroupCode="Ethnicity"
+					chartType="pie"
+					displayLegends="{true}"
+					xAxisTitle="Ethnicity signifier"
+					yAxisTitle="Number of patients"
+				></lens-chart>
+			</div>
+			<div class="chart-wrapper">
+				<lens-chart
+					title="Variant types"
+					catalogueGroupCode="variant_name"
 					chartType="bar"
 					displayLegends="{true}"
-					xAxisTitle="Variant signifier"
+					xAxisTitle="Variant name"
 					yAxisTitle="Number of entities"
 				></lens-chart>
 			</div>

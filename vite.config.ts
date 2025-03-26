@@ -20,5 +20,8 @@ export default defineConfig({
 	},
 	ssr: {
 		noExternal: ['@samply/lens'] // Mark package as noExternal if SSR issues
+	},
+	build: {
+		sourcemap: true, // Ensure source maps are enabled
 	}
 });
