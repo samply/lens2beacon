@@ -8,8 +8,7 @@ import type { MeasureGroup } from '@samply/lens';
 export const measures: MeasureGroup[] = [
 	{
 		name: 'DKTK',
-		measures: [
-		]
+		measures: []
 	}
 ];
 
