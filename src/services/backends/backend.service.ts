@@ -3,17 +3,12 @@ import { Beacon } from './beacon';
 
 export const requestBackend = (
 	ast: AstTopLayer,
-	updateResponse: (response: Map<string, Site>) => void,
-	abortController: AbortController
+	updateResponse: (response: Map<string, Site>) => void
 ) => {
 	const queryId = crypto.randomUUID();
 	const backendUrl: string = window.location.origin + ':8080'; // Assume same origin as frontend
 	const backend = new Beacon(new URL(backendUrl), queryId);
-	const queryString = JSON.stringify(ast)
+	const queryString = JSON.stringify(ast);
 
-    backend.send(
-		queryString,
-        updateResponse,
-        abortController,
-    );
-}
+	backend.send(queryString, updateResponse);
+};
