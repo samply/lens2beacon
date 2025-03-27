@@ -68,7 +68,7 @@
 			</div>
 		</div>
 		<div class="charts">
-			<!-- Each chart requires an entry in src/options.json and static/options.json -->
+			<!-- Each chart requires an entry in static/config/options.json -->
 			<!-- in the catalogueKeyToResponseKeyMap, providing mappings from the code for -->
 			<!-- the stratifier to the catalogueGroupCode for the chart. You need to do this -->
 			<!-- even if code and catalogueGroupCode are the same. -->

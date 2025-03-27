@@ -129,30 +129,5 @@
         "claimedText": "Processing..."
     },
     "spots": [
-            {
-                "name": "DKTK",
-                "backendMeasures": "DKTK_STRAT_DEF_IN_INITIAL_POPULATION",
-                "url": "",
-                "sites": [
-                ],
-                "catalogueKeyToResponseKeyMap": [
-                    [
-                        "Gender",
-                        "Gender"
-                    ],
-                    [
-                        "Ethnicity",
-                        "Ethnicity"
-                    ],
-                    [
-                        "variant_name",
-                        "variant_name"
-                    ],
-                    [
-                        "sample_kind",
-                        "sample_kind"
-                    ]
-                ]
-            }
         ]
 }
