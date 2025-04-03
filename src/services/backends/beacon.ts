@@ -66,7 +66,7 @@ export class Beacon {
 					status: 'succeeded',
 					data: result.measureReport
 				});
-				console.log('measureReport', result.measureReport);
+				console.log('send: parsedResponse: ', parsedResponse);
 				updateResponse(parsedResponse);
 			}
 		} catch (err) {
@@ -145,6 +145,7 @@ export class Beacon {
 			const name: string = populationValueMap.get('name') as string;
 			transformedResponse.set(name, site);
 		}
+		console.log('createResponseStore: transformedResponse: ', transformedResponse);
 		return transformedResponse;
 	}
 

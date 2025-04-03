@@ -2,14 +2,22 @@
     "iconOptions": {
         "deleteUrl": "delete_icon.svg",
         "infoUrl": "info-circle-svgrepo-com.svg",
-        "selectAll": {
-            "text": "Add all"
-        }
+        "toggleIconUrl": "right-arrow-svgrepo-com.svg",
+        "addIconUrl": "long-right-arrow-svgrepo-com.svg"
     },
     "siteMappings": {
         "stockholm": "Stockholm",
         "athens": "Athens",
-        "bucharest": "Bucharest"
+        "bucharest": "Bucharest",
+        "CafeVariome": "CafeVariome",
+        "EGA Cineca": "EGA Cineca",
+        "GDI Starter Kit, firewalled": "GDI Starter Kit, firewalled",
+        "GDI Starter Kit": "GDI Starter Kit",
+        "HD Cineca firewalled": "HD Cineca firewalled",
+        "HD Cineca": "HD Cineca",
+        "Molgenis mutations": "Molgenis mutations",
+        "Progenetix": "Progenetix",
+        "RDConnect playground": "RDConnect playground"
     },
     "catalogueKeyToResponseKeyMap": [
         [

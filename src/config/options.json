@@ -1,15 +1,21 @@
 {
     "iconOptions": {
         "deleteUrl": "delete_icon.svg",
-        "infoUrl": "info-circle-svgrepo-com.svg",
-        "selectAll": {
-            "text": "Add all"
-        }
+        "infoUrl": "info-circle-svgrepo-com.svg"
     },
     "siteMappings": {
         "stockholm": "Stockholm",
         "athens": "Athens",
-        "bucharest": "Bucharest"
+        "bucharest": "Bucharest",
+        "CafeVariome": "CafeVariome",
+        "EGA Cineca": "EGA Cineca",
+        "GDI Starter Kit, firewalled": "GDI Starter Kit, firewalled",
+        "GDI Starter Kit": "GDI Starter Kit",
+        "HD Cineca firewalled": "HD Cineca firewalled",
+        "HD Cineca": "HD Cineca",
+        "Molgenis mutations": "Molgenis mutations",
+        "Progenetix": "Progenetix",
+        "RDConnect playground": "RDConnect playground"
     },
     "chartOptions": {
         "patients": {
@@ -129,30 +135,5 @@
         "claimedText": "Processing..."
     },
     "spots": [
-            {
-                "name": "DKTK",
-                "backendMeasures": "DKTK_STRAT_DEF_IN_INITIAL_POPULATION",
-                "url": "",
-                "sites": [
-                ],
-                "catalogueKeyToResponseKeyMap": [
-                    [
-                        "Gender",
-                        "Gender"
-                    ],
-                    [
-                        "Ethnicity",
-                        "Ethnicity"
-                    ],
-                    [
-                        "variant_name",
-                        "variant_name"
-                    ],
-                    [
-                        "sample_kind",
-                        "sample_kind"
-                    ]
-                ]
-            }
         ]
 }

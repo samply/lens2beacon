@@ -1,9 +1,11 @@
 [
   {
+    "fieldType": "group",
     "key": "variants",
     "name": "Variants",
     "childCategories": [
       {
+        "fieldType": "group",
         "key": "genomic_variation",
         "name": "Genomic variation",
         "childCategories": [
@@ -160,8 +162,7 @@
             "name": "Range",
             "system": "",
             "fieldType": "number",
-            "type": "BETWEEN",
-            "criteria": []
+            "type": "BETWEEN"
           }
         ]
       },
@@ -170,8 +171,7 @@
         "name": "HGVS, e.g. 22:g.16050075A>G",
         "system": "",
         "fieldType": "string",
-        "type": "EQUALS",
-        "criteria": []
+        "type": "EQUALS"
       },
       {
         "key": "variant_type",
@@ -334,6 +334,7 @@
     ]
   },
   {
+    "fieldType": "group",
     "key": "cohorts",
     "name": "Cohorts",
     "childCategories": [
@@ -393,6 +394,7 @@
     ]
   },
   {
+    "fieldType": "group",
     "key": "runs",
     "name": "Runs",
     "childCategories": [
@@ -447,6 +449,7 @@
     ]
   },
   {
+    "fieldType": "group",
     "key": "datasets",
     "name": "Datasets",
     "childCategories": [
@@ -482,11 +485,13 @@
     ]
   },
   {
+    "fieldType": "group",
     "key": "analyses",
     "name": "Analyses",
     "childCategories": []
   },
   {
+    "fieldType": "group",
     "key": "individuals",
     "name": "Individuals",
     "childCategories": [
@@ -761,36 +766,33 @@
         "name": "OPCS4 procedure code, e.g. X53",
         "system": "",
         "fieldType": "string",
-        "type": "EQUALS",
-        "criteria": []
+        "type": "EQUALS"
       },
       {
         "key": "bmi",
         "name": "BMI",
         "system": "",
         "fieldType": "number",
-        "type": "BETWEEN",
-        "criteria": []
+        "type": "BETWEEN"
       },
       {
         "key": "weight",
         "name": "Weight",
         "system": "",
         "fieldType": "number",
-        "type": "BETWEEN",
-        "criteria": []
+        "type": "BETWEEN"
       },
       {
         "key": "height",
         "name": "Height",
         "system": "",
         "fieldType": "number",
-        "type": "BETWEEN",
-        "criteria": []
+        "type": "BETWEEN"
       }
     ]
   },
   {
+    "fieldType": "group",
     "key": "biosamples",
     "name": "Biosamples",
     "childCategories": [

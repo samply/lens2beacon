@@ -58,9 +58,9 @@
 	<div class="grid">
 		<div class="catalogue-wrapper">
 			<div class="catalogue">
+				<!-- infoIconUrl should be in static/config/options.json under iconOptions according to the migration guide
+				     for v0.5.0-alpha, but doing that causes a runtime error. -->
 				<lens-catalogue
-					toggleIconUrl="right-arrow-svgrepo-com.svg"
-					addIconUrl="long-right-arrow-svgrepo-com.svg"
 					infoIconUrl="info-circle-svgrepo-com.svg"
 					texts="{catalogueText}"
 					toggle="{{ collapsable: catalogueCollapsable, open: catalogueopen }}"
@@ -68,7 +68,7 @@
 			</div>
 		</div>
 		<div class="charts">
-			<!-- Each chart requires an entry in src/options.json and static/options.json -->
+			<!-- Each chart requires an entry in static/config/options.json -->
 			<!-- in the catalogueKeyToResponseKeyMap, providing mappings from the code for -->
 			<!-- the stratifier to the catalogueGroupCode for the chart. You need to do this -->
 			<!-- even if code and catalogueGroupCode are the same. -->
