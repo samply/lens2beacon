@@ -91,7 +91,7 @@ export class Beacon {
 			['analyses', '1'],
 			['datasets', '1'],
 			['individuals', '2050'],
-			['biosamples', '3000']
+			['specimen', '3000']
 		]);
 		updateResponse(this.createResponseStore(populationValueMapStockholm));
 		const populationValueMapAthens: Map<string, string> = new Map([
@@ -102,7 +102,7 @@ export class Beacon {
 			['analyses', '3'],
 			['datasets', '1'],
 			['individuals', '255'],
-			['biosamples', '4001']
+			['specimen', '4001']
 		]);
 		updateResponse(this.createResponseStore(populationValueMapAthens));
 		const populationValueMapBucharest: Map<string, string> = new Map([
@@ -113,7 +113,7 @@ export class Beacon {
 			['analyses', '1'],
 			['datasets', '1'],
 			['individuals', '30000'],
-			['biosamples', '50000']
+			['specimen', '50000']
 		]);
 		updateResponse(this.createResponseStore(populationValueMapBucharest));
 	}

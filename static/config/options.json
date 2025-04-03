@@ -149,7 +149,7 @@
             },
             {
                 "title": "Biosamples",
-                "dataKey": "biosamples"
+                "dataKey": "specimen"
             }
         ],
         "claimedText": "Processing..."
