@@ -1,6 +1,50 @@
 <script lang="ts">
 	import './app.css';
 	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
+
+	// If a results table cell contains "-1", it means that the cell is empty,
+	// so we replace it with "-". This is done inside the shadow DOM of the
+	// lens-result-table component.
+	onMount(() => {
+		let observer: MutationObserver | null = null;
+
+		const waitForShadowRoot = () => {
+			const lensTable = document.querySelector('lens-result-table');
+			if (!lensTable) {
+				// lens-result-table not found yet, retrying.
+				setTimeout(waitForShadowRoot, 100);
+				return;
+			}
+
+			const shadow = lensTable?.shadowRoot;
+			if (!shadow) {
+				// lens-result-table found but shadowRoot not ready yet, retrying.
+				setTimeout(waitForShadowRoot, 100);
+				return;
+			}
+
+			// Shadow root detected, attaching observer.
+			observer = new MutationObserver(() => {
+				const cells = shadow.querySelectorAll('td[part="table-body-cell"]');
+				cells.forEach((cell) => {
+					if (cell.textContent.trim() === '-1') {
+						// Replacing -1 with - in cell
+						cell.textContent = '-';
+					}
+				});
+			});
+
+			observer.observe(shadow, { childList: true, subtree: true });
+		};
+
+		waitForShadowRoot();
+
+		// Disconnect when the component is destroyed
+		return () => {
+			if (observer) observer.disconnect();
+		};
+	});
 
 	// conditional import for SSR
 	if (browser) import('@samply/lens');
