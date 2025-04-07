@@ -151,8 +151,7 @@
                 "title": "Biosamples",
                 "dataKey": "specimen"
             }
-        ],
-        "claimedText": "Processing..."
+        ]
     },
     "backends": {
     }
